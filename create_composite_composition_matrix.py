@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-single_item_mapping = pd.read_csv('data/single_item_mapping_with_modifier_tag.csv')
+single_item_mapping = pd.read_csv('data/mappings/single_item_mapping_with_modifier_tag.csv')
 single_item_dict = dict(zip(single_item_mapping['Food_Category_sub_sub'], single_item_mapping['Food Commodity']))
 
 
@@ -16,7 +16,7 @@ food_composition_df["Tag"] = food_composition_df["Food_Category_sub_sub"].map(si
 unique_single_tags_from_composites = food_composition_df["Tag"].unique()
 unique_single_tags_from_composites = [str(tag) for tag in unique_single_tags_from_composites]
 
-rst_mapping_df = pd.read_csv('data/food_mapping.csv')
+rst_mapping_df = pd.read_csv('data/mappings/tag_mapping.csv')
 unique_tags_from_rst = rst_mapping_df["mapped_tag"].unique().tolist()
 unique_single_tags_from_rst = [tag[1:] for tag in unique_tags_from_rst if type(tag) == str and tag[0] == "*"]
 
@@ -45,4 +45,4 @@ for item in unique_single_tags_from_rst:
     row[column_map[item]] = 100.
     single_item_array.loc[item] = row
         
-single_item_array.to_csv('data/mapping/composition_matrix.csv')
+single_item_array.to_csv('data/mappings/composition_matrix.csv')
