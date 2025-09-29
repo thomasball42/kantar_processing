@@ -25,3 +25,11 @@
 4. run calculate_item_impacts.py
 
     Calculates biological impacts of each product
+
+5. run calculate_hh_impacts.py
+
+    Calculates  impacts of each hh and plots
+
+
+### Other
+detect_hh_to_exclude.py creates a list of hh that submitted less than 50 weeks of data (used in calculate_hh_impacts.py)
