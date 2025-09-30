@@ -6,6 +6,8 @@
 - data/attr_all_fixed.csv (product data)
 - data/dat_th.csv (purchase data)
 
+Available [here](https://github.com/louis-de-neve/kantar_private_data) if added as contributor
+
 #### Included:
 - data/food_group_compositions.csv (breakdown for composite items)
 - data/food_commodity_impacts_UK.csv (bio impacts of each food type)
