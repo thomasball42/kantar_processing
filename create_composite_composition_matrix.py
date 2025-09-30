@@ -51,4 +51,4 @@ for item in unique_single_tags_from_rst:
     row[column_map[item]] = 100.
     single_item_array.loc[item] = row
         
-single_item_array.to_csv('data/mappings/composition_matrix.csv')
+single_item_array.to_csv('data/composition_matrix.csv')

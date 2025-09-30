@@ -53,7 +53,7 @@ def main() -> None:
     dat_df['mapped_tag'] = dat_df['product'].map(df.set_index('product')['mapped_tag'])
     unique_item_properties = dat_df[['product', 'mapped_tag', 'item_weight_kg']]
 
-    comp_matrix: DataFrame = pd.read_csv('data/mappings/composition_matrix.csv', encoding='cp1252', low_memory=False, index_col=0)
+    comp_matrix: DataFrame = pd.read_csv('data/composition_matrix.csv', encoding='cp1252', low_memory=False, index_col=0)
     out_df = create_item_weights_matrix(unique_item_properties, comp_matrix)
     out_df.to_csv('data/product_breakdown_matrix.csv', encoding='cp1252')
     
