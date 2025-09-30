@@ -1,7 +1,12 @@
-### Requirements
-#### Files:
+## Overview
+![Flowchart](Flowchart.png)
+
+## Data Files
+#### Required:
 - data/attr_all_fixed.csv (product data)
 - data/dat_th.csv (purchase data)
+
+#### Included:
 - data/food_group_compositions.csv (breakdown for composite items)
 - data/food_commodity_impacts_UK.csv (bio impacts of each food type)
 - data/mapping/tag_mapping.csv (maps RST markets to tags)
@@ -9,7 +14,7 @@
 
 
 
-### Run order:
+## Run order:
 1. run add_tag_to_attr_all_fixed.py
   
     This adds the mapping tag to each product 
@@ -26,10 +31,9 @@
 
     Calculates biological impacts of each product
 
-5. run calculate_hh_impacts.py
-
-    Calculates  impacts of each hh and plots
 
 
 ### Other
-detect_hh_to_exclude.py creates a list of hh that submitted less than 50 weeks of data (used in calculate_hh_impacts.py)
+detect_hh_to_exclude.py - creates a list of hh that submitted less than 50 weeks of data (used in calculate_hh_impacts.py)
+
+run calculate_hh_impacts.py - Calculates  impacts of each hh and plots
