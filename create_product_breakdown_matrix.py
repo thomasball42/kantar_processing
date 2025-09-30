@@ -2,13 +2,15 @@ import pandas as pd
 import numpy as np
 from pandas import DataFrame, Series
 
+# create the product matrix for all items in dat_th.csv
 
+
+# calculate weights
 def weight_calc(sizes:Series, units:Series, volumes:Series, packs:Series) -> list:
     weights:list = [size/1000 if unit in ['g', 'Drained weightg', 'ml'] # assume ml = g
                 else volume/pack # fall back to per pack volume if mass data is unavailable
                 for size, unit, volume, pack in zip(sizes, units, volumes, packs) ]
     return weights
-
 
 def compute_unique_item_weights(dat_df:DataFrame) -> pd.DataFrame:
     dat_df.drop_duplicates(['product'], inplace=True)
@@ -16,8 +18,9 @@ def compute_unique_item_weights(dat_df:DataFrame) -> pd.DataFrame:
     return dat_df
 
 
+# create matrix of item weights
 def create_item_weights_matrix(unique_item_properties:DataFrame, comp_matrix:DataFrame) -> DataFrame:
-    comp_matrix = comp_matrix.drop("OLIVES") # there are olives as composite which we ignore in favour of whole olives
+    comp_matrix = comp_matrix.drop("OLIVES") # there are olives as composite which we ignore in favour of olives as single item
     comp_matrix.index = comp_matrix.index.str.lower()
 
 
