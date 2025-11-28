@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the CSV file
-df = pd.read_csv('data/pan_th_new.csv')
+df = pd.read_csv('../data/pan_th_new.csv')
 
 # Assume 'sex' column has values like 'Male' and 'Female' (adjust if needed)
 # Create age bins

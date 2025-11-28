@@ -1,9 +1,14 @@
-print(0)
-import add_tag_to_attr_all_fixed
+from preprocessing.add_tag_to_attr_all_fixed import main as main1
+from preprocessing.create_composite_composition_matrix import main as main2
+from preprocessing.create_product_breakdown_matrix import main as main3
+from preprocessing.calculate_item_impacts import main as main4
+
+
+main1()
 print(1)
-import create_composite_composition_matrix
+main2()
 print(2)
-import create_product_breakdown_matrix
+main3()
 print(3)
-import calculate_item_impacts
+main4()
 print(4)
