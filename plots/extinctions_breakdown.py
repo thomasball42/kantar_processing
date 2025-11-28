@@ -12,23 +12,23 @@ ax1 = fig.add_axes((0.1, 0.11, 0.77, 0.77))
 
 
 
-prod_data = pd.read_csv("data/attr_all_fixed_mapped.csv", low_memory=False)[["product", "long_desc", "rst_4_extended"]]
+prod_data = pd.read_csv("../data/attr_all_fixed_mapped.csv", low_memory=False)[["product", "long_desc", "rst_4_extended"]]
 
 
 
 hh_to_exclude = []
-with open("data/hh_to_exclude.txt", "r") as f:
+with open("../data/hh_to_exclude.txt", "r") as f:
     for line in f:
         hh_to_exclude.append(int(line.strip()))
 
 
 
-df = pd.read_csv("data/dat_th_with_impacts.csv")
+df = pd.read_csv("../data/dat_th_with_impacts.csv")
 df = df[~df['house'].isin(hh_to_exclude)]
 df = df.merge(prod_data, on='product', how='left')
 
 
-people_data = pd.read_csv("data/pan_th_new.csv")[["house", "size"]]
+people_data = pd.read_csv("../data/pan_th_new.csv")[["house", "size"]]
 
 pop = 0
 for d in df['house'].unique():
@@ -43,14 +43,14 @@ def weight_calc(sizes, units, volumes, packs) -> list:
 df['item_weight_kg'] = weight_calc(df['pack_size'], df['pack_unit'], df['volume'], df['packs'])
 df['purchased_mass_kg'] = df['item_weight_kg'] * df['packs']
 
-plotting_categories = pd.read_csv("data/mappings/plotting_categories.csv")
+plotting_categories = pd.read_csv("../data/mappings/plotting_categories.csv")
 
 df = df.merge(plotting_categories, on='mapped_tag', how='left')
 
 
 
 display_cat = 't2_category'
-display_opt = pd.read_csv("data/mappings/display_options.csv")
+display_opt = pd.read_csv("../data/mappings/display_options.csv")
 
 veg_df = df[df["t3_category"].isin(["Vegetables", "Root Vegetables", "Potatoes"])]
 fruit_df = df[df["t3_category"] == "Fruit"]
@@ -125,6 +125,6 @@ axb.tick_params(axis='x', colors=total_grid_color)
 
 
 
-plt.savefig("outputs/extinctions_breakdown.png", dpi=300, bbox_inches='tight')
+plt.savefig("../outputs/extinctions_breakdown.png", dpi=300, bbox_inches='tight')
 print(ax1.get_position())
 # plt.show()
