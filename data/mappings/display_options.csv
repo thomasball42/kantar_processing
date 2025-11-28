@@ -1,0 +1,76 @@
+t3_category,display,location
+Butter and Margarine,True,False
+Fruit,True,True
+Vegetables,True,False
+Ready Meals,True,True
+Yoghurts,True,False
+Bread & Rolls,True,True
+Poultry,True,False
+Cakes and Pastries,True,True
+Eggs,True,False
+Pork,True,True
+Fresh Salad & Dips,False,False
+Milk and Cream,True,False
+Sweet and Savoury Spreads,True,True
+Desserts,False,False
+Pizza,True,False
+Cooking and Baking Ingredients,False,False
+Ruminant Meat,True,False
+Cheese,True,False
+Sliced and Other Meats,False,False
+Fish & Seafood,False,False
+Fruit juices and Squash,True,False
+Olives and Chutneys,False,False
+"Crisps, Snacks & Popcorn",False,False
+Meat Alternatives,True,False
+Soups,False,False
+Alcoholic Drinks and Mixers,False,False
+Tea,True,False
+Breakfast Cereals,True,False
+Sugar,True,False
+Biscuits and Cereal Bars,True,False
+Coffee,True,False
+Hot Chocolate,True,False
+Table Sauces,False,False
+Chocolate and Confectionery,True,True
+Sweets,False,False
+Dried Cereal Grains,True,False
+Other Breads,False,False
+Fizzy Drinks,True,False
+"Nuts, Dried Fruit and Seeds",True,False
+Stuffing,False,False
+Milkshakes and Yoghurt Drinks,False,False
+Peppers and Chillies,True,False
+Mushrooms,True,False
+Gourds,True,True
+Tomatoes,True,True
+Carrots and Other Root Vegetables,True,False
+Mixed and Other Vegetables,True,False
+Alliaceous Vegetables,True,True
+Potatoes,True,False
+Lettuce and Artichokes,True,True
+Brassicas,True,False
+Leguminous Vegetables,True,False
+Asparagus,True,False
+Maize,True,False
+Aubergines,True,False
+Spinach,True,False
+Berries,True,False
+Rose Family Fruits,True,False
+Bananas,True,False
+Grapes,True,True
+Kiwi,True,False
+Apples,True,False
+Citrus Fruits,True,True
+Mixed Fruit,True,False
+Melons,True,True
+Pears and Quinces,True,True
+Other Fruit,True,False
+Mangos and Guava,True,True
+Avocados,True,False
+"Dates, Persimmons and Figs",True,False
+Pineapples,True,False
+"Peaches, Nectarines and Apricots",True,False
+Plums and Cherries,True,False
+Tropical Fruit,True,False
+Root Vegetables,True,False
