@@ -1210,7 +1210,7 @@ Eye Drops,Fresh Eyes Drops,Eye Care,,
 Eye Lotions,Fresh Eyes Lotion,Eye Care,,
 Eye Masks,Fresh Eyes Mask,Eye Care,,
 Fabric Conditioners,Fabric Conditioners,Fabric Conditioners,,
-Fabs,Fabs,Fabs,,
+Fabs,Fabs,Fabs,alcohol-othr spirit bsd drnks,alcohol-othr spirit bsd drnks
 Boxed Mansize Facial Tissues,Mansize Boxed,Facial Tissues,,
 Cosmetic Boxed Facial Tissues,Cosmetic Boxed,Facial Tissues,,
 Facial Tissue Pocket Packs,Pocket Packs,Facial Tissues,,
@@ -1327,9 +1327,9 @@ Fresh Cream Sterilised,Sterilised Cream,Fresh Cream,"*Butter, Cream & Ghee",crea
 Fresh Cream Synthetic,Synthetic Cream,Fresh Cream,"*Butter, Cream & Ghee",cream-dairy and non dairy
 Fresh Cream Whipping,Whipping Cream,Fresh Cream,"*Butter, Cream & Ghee",cream-dairy and non dairy
 Fresh Cream Whipping U.H.T.,Whipping Cream,Fresh Cream,"*Butter, Cream & Ghee",cream-dairy and non dairy
-Fresh Flavoured Meats Beef,Fresh Flavoured Meats,Fresh Flavoured Meats,meat - fresh prcsd snacks,meat - fresh prcsd snacks
-Fresh Flavoured Meats Lamb,Fresh Flavoured Meats,Fresh Flavoured Meats,meat - fresh prcsd snacks,meat - fresh prcsd snacks
-Fresh Flavoured Meats Pork,Fresh Flavoured Meats,Fresh Flavoured Meats,meat - fresh prcsd snacks,meat - fresh prcsd snacks
+Fresh Flavoured Meats Beef,Fresh Flavoured Meats,Fresh Flavoured Meats,*Meat; cattle,meat - fresh prcsd snacks
+Fresh Flavoured Meats Lamb,Fresh Flavoured Meats,Fresh Flavoured Meats,*Meat; sheep,meat - fresh prcsd snacks
+Fresh Flavoured Meats Pork,Fresh Flavoured Meats,Fresh Flavoured Meats,Meat; pig,meat - fresh prcsd snacks
 Fresh Flavoured Meats Veal,Fresh Flavoured Meats,Fresh Flavoured Meats,meat - fresh prcsd snacks,meat - fresh prcsd snacks
 Fresh Diced/Cubed Lamb,Diced/Cubed,Fresh Lamb,*Meat; sheep,meat - fresh primary
 Fresh Frying/Grilling Chop Lmb,Frying/Grilling Chops,Fresh Lamb,*Meat; sheep,meat - fresh primary
@@ -1822,8 +1822,8 @@ Fruit Filling,Fruit Filling,Fruit Filling,fruit pie filling-ambient,fruit pie fi
 Furniture Polish,Furniture Polish,Furniture Polish,,
 Low Calorie Ginger Ale,Low Calorie,Ginger Ale,soft drinks-crbntd flvrs bttls,soft drinks-crbntd flvrs bttls
 Standard Ginger Ale,Standard,Ginger Ale,soft drinks-crbntd flvrs bttls,soft drinks-crbntd flvrs bttls
-Gum Confectionery Bubble Gum,Bubble Gum,Gum Confectionery,,
-Gum Confectionery Chewing Gum,Chewing Gum,Gum Confectionery,,
+Gum Confectionery Bubble Gum,Bubble Gum,Gum Confectionery,sugar conf-mints,
+Gum Confectionery Chewing Gum,Chewing Gum,Gum Confectionery,sugar conf-mints,
 Blachs/Lghtnrs/Strk Kts Hr Clr,Bleaches/Lghtnrs/Strk Kts,Hair Colourants,,
 Hair Colour Restorers,Colour Restorers,Hair Colourants,,
 Permanent Hair Colourant,Permanents,Hair Colourants,,

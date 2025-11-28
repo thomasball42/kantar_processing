@@ -38,7 +38,6 @@ def create_item_weights_matrix(unique_item_properties:DataFrame, comp_matrix:Dat
 
         matrix[index] = comp_matrix.loc[mapped_tag]/100 * item_weight_kg
 
-
     output_df: DataFrame = pd.DataFrame(matrix, index=indices, columns=columns)
     return output_df
 
@@ -57,6 +56,5 @@ def main() -> None:
     out_df = create_item_weights_matrix(unique_item_properties, comp_matrix)
     out_df.to_csv('data/product_breakdown_matrix.csv', encoding='cp1252')
     
-
 if __name__ == "__main__":
     main()
