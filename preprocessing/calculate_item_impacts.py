@@ -11,7 +11,7 @@ def main():
     matrix: np.ndarray = matrix_df.to_numpy(dtype=float)
 
     # load the impact factors as vector
-    impacts: DataFrame = pd.read_csv("data/food_commodity_impacts_wErr.csv", index_col=0)
+    impacts: DataFrame = pd.read_csv("data/food_commodity_impacts_fixed.csv", index_col=0)
     impacts = impacts[impacts.index.isin(matrix_columns)]
     impacts.sort_index(inplace=True)
 
@@ -60,7 +60,12 @@ def main():
 
     category_df = pd.read_csv("data/attr_all_fixed_mapped.csv", usecols=['product', 'mapped_tag'])
     recreate_dat_th = recreate_dat_th.merge(category_df, on='product', how='left')
+
+    recreate_dat_th = recreate_dat_th[~((recreate_dat_th['pack_unit']=='Servings')&(recreate_dat_th['mapped_tag']!='Eggs; hen; in shell'))]
+
     recreate_dat_th.to_csv("data/dat_th_with_impacts.csv", index=False)
 
 if __name__ == "__main__":
+    import os
+    os.chdir("../")
     main()

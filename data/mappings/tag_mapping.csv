@@ -283,7 +283,7 @@ Canned Veg Celery,Celery,Canned Vegetables,vegetables-canned peas & beans,vegeta
 Canned Veg Chopped Mushroom,Chopped Mushrooms,Canned Vegetables,*Mushrooms and truffles,vegetables-canned peas & beans
 Canned Veg Creamed Mushroom,Creamed Mushrooms,Canned Vegetables,*Mushrooms and truffles,vegetables-canned peas & beans
 Canned Veg Garlic Mushroom,Garlic Mushroom,Canned Vegetables,*Mushrooms and truffles,vegetables-canned peas & beans
-Canned Veg Green Pepper,Green Pepper,Canned Vegetables,*Pepper (piper spp.),vegetables-canned peas & beans
+Canned Veg Green Pepper,Green Pepper,Canned Vegetables,*Chillies and peppers; green,vegetables-canned peas & beans
 Canned Veg Jersey Potatoes,Jersey Potatoes,Canned Vegetables,*Potatoes,vegetables-canned peas & beans
 Canned Veg Lentil,Lentil,Canned Vegetables,*Lentils,vegetables-canned peas & beans
 Canned Veg Mixed Pulses,Mixed Pulses,Canned Vegetables,*Pulses nes,vegetables-canned peas & beans
@@ -301,13 +301,13 @@ Canned Veg Petit Pois+Carrots,Petit Pois+Carrots,Canned Vegetables,vegetables-ca
 Canned Veg Petit Pois+Swede,Petit Pois+Sweetcorn,Canned Vegetables,vegetables-canned peas & beans,vegetables-canned peas & beans
 Canned Veg Ratatouille,Ratatouille,Canned Vegetables,vegetables-canned peas & beans,vegetables-canned peas & beans
 Canned Veg Red Cabbage,Red Cabbage,Canned Vegetables,*Cabbages and other brassicas,vegetables-canned peas & beans
-Canned Veg Red Peppers,Red Peppers,Canned Vegetables,*Pepper (piper spp.),vegetables-canned peas & beans
+Canned Veg Red Peppers,Red Peppers,Canned Vegetables,*Chillies and peppers; green,vegetables-canned peas & beans
 Canned Veg Sliced Carrots,Sliced Carrots,Canned Vegetables,*Carrots and turnips,vegetables-canned peas & beans
 Canned Veg Sliced Mushroom,Sliced Mushrooms,Canned Vegetables,*Mushrooms and truffles,vegetables-canned peas & beans
 Canned Veg Spinach,Spinach,Canned Vegetables,*Spinach,vegetables-canned peas & beans
 Canned Veg Sweetcorn,Sweetcorn,Canned Vegetables,ambient vegetables-sweetcorn,vegetables-canned peas & beans
-Canned Veg Yellow Peppers,Yellow Peppers,Canned Vegetables,*Pepper (piper spp.),vegetables-canned peas & beans
-Canned Vegetab Assorted Pepper,Assorted Peppers,Canned Vegetables,*Pepper (piper spp.),vegetables-canned peas & beans
+Canned Veg Yellow Peppers,Yellow Peppers,Canned Vegetables,*Chillies and peppers; green,vegetables-canned peas & beans
+Canned Vegetab Assorted Pepper,Assorted Peppers,Canned Vegetables,*Chillies and peppers; green,vegetables-canned peas & beans
 Canned Vegetab Chantenay Carro,Chantenay Carrots,Canned Vegetables,*Carrots and turnips,vegetables-canned peas & beans
 Canned Vegetab Grated Potatoes,Grated Potatoes,Canned Vegetables,*Potatoes,vegetables-canned peas & beans
 Canned Vegetab Lentil+Onion+Ca,Lentil+Onion+Carrot,Canned Vegetables,vegetables-canned peas & beans,vegetables-canned peas & beans
@@ -315,7 +315,7 @@ Canned Vegetab Mediterranean S,Mediterranean Salad,Canned Vegetables,vegetables-
 Canned Vegetab Mixed Vegetable,Mixed Vegetable Salad,Canned Vegetables,vegetables-canned peas & beans,vegetables-canned peas & beans
 Canned Vegetab Mungbean Sprout,Mungbean Sprouts,Canned Vegetables,vegetables-canned peas & beans,vegetables-canned peas & beans
 Canned Vegetab Stuffed Cabbage,Stuffed Cabbage,Canned Vegetables,*Cabbages and other brassicas,vegetables-canned peas & beans
-Canned Vegetab Sun Kissed Pepp,Sun Kissed Peppers,Canned Vegetables,*Pepper (piper spp.),vegetables-canned peas & beans
+Canned Vegetab Sun Kissed Pepp,Sun Kissed Peppers,Canned Vegetables,*Chillies and peppers; green,vegetables-canned peas & beans
 Canned Vegetable Diced Potato,Diced Potato,Canned Vegetables,*Potatoes,vegetables-canned peas & beans
 Canned Vegetables Barley,Barley,Canned Vegetables,*Barley,vegetables-canned peas & beans
 Canned Vegetables Peas+Beans,Peas+Beans,Canned Vegetables,vegetables-canned peas & beans,vegetables-canned peas & beans
@@ -1663,7 +1663,7 @@ Frozen Veg/Rice Mixtures,Veg/Rice Mixtures,Frozen Vegetables,veg - frozen vegeta
 Frozen Vegetab Broccoli+Green,Broccoli+Green Beans+Peas,Frozen Vegetables,*Cauliflowers and broccoli,veg - frozen vegetables
 Frozen Vegetab Carrot+Parsnip,Carrot+Parsnip,Frozen Vegetables,*Carrots and turnips,veg - frozen vegetables
 Frozen Vegetab Cauliflower Che,Cauliflower Cheese,Frozen Vegetables,*Cauliflowers and broccoli,veg - frozen vegetables
-Frozen Vegetab Red Hot Chilli,Red Hot Chilli Pepper,Frozen Vegetables,*Pepper (piper spp.),veg - frozen vegetables
+Frozen Vegetab Red Hot Chilli,Red Hot Chilli Pepper,Frozen Vegetables,*Chillies and peppers; green,veg - frozen vegetables
 Frozen Vegetab Sticky Texas On,Sticky Texas Onions,Frozen Vegetables,veg - frozen vegetables,veg - frozen vegetables
 Frozen Vegetab Vegetable+Quino,Vegetable+Quinoa,Frozen Vegetables,veg - frozen vegetables,veg - frozen vegetables
 Frozen Vegetable Butter Beans,Butter Beans,Frozen Vegetables,*Beans; dry,veg - frozen vegetables
@@ -1904,7 +1904,7 @@ Herbal Tea Organic Bags,Organic Bags,Herbal Tea,tea-fruit & herbal bags,tea-frui
 Herbal Tea Speciality Bags,Speciality Bags,Herbal Tea,tea-fruit & herbal bags,tea-fruit & herbal bags
 Herbs+Spices,Herbs+Spices,Herbs+Spices,herbs and spices,herbs and spices
 Herbs+Spices Herbs,Herbs,Herbs+Spices,herbs and spices,herbs and spices
-Herbs+Spices Pepper,Pepper,Herbs+Spices,herbs and spices,herbs and spices
+Herbs+Spices Pepper,Pepper,Herbs+Spices,*Pepper (piper spp.),herbs and spices
 Herbs+Spices Pepper+Salt,Pepper+Salt,Herbs+Spices,herbs and spices,herbs and spices
 Herbs+Spices Seasoning,Seasoning,Herbs+Spices,herbs and spices,herbs and spices
 Herbs+Spices Spices,Spices,Herbs+Spices,herbs and spices,herbs and spices
@@ -2928,19 +2928,19 @@ Vegetable Parsnips,Parsnips,Vegetable,*Vegetables; fresh nes,ambient vegetables-
 Vegetable Peas Mangetout,Peas,Vegetable,*Vegetables; leguminous nes,ambient vegetables-other veg
 Vegetable Peas Other,Peas,Vegetable,*Vegetables; leguminous nes,ambient vegetables-other veg
 Vegetable Peas Sugarsnap,Peas,Vegetable,*Vegetables; leguminous nes,ambient vegetables-other veg
-Vegetable Pepper Green,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Large,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Loose,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Orange,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Other,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Prepacked,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Red,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Small,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Specialty,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Traffic Light,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Pepper Yellow,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Peppers Peppers Baby,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
-Vegetable Peppers Peppers Rami,Peppers,Vegetable,*Pepper (piper spp.),vegetables - peppers
+Vegetable Pepper Green,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Large,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Loose,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Orange,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Other,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Prepacked,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Red,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Small,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Specialty,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Traffic Light,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Pepper Yellow,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Peppers Peppers Baby,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
+Vegetable Peppers Peppers Rami,Peppers,Vegetable,*Chillies and peppers; green,vegetables - peppers
 Vegetable Pumpkin,Pumpkin,Vegetable,*Pumpkins; squash and gourds,ambient vegetables-other veg
 Vegetable Radish,Radish,Vegetable,*Cabbages and other brassicas,ambient vegetables-other veg
 Vegetable Raw Beetroot,Beetroot,Vegetable,*Sugar beet,ambient vegetables-other veg

@@ -105,7 +105,7 @@ ax1.set_ylabel(u"Extinctions per kg (kg$^{-1}$)", fontsize=12)
 ax1.grid(True, which="major", linewidth=0.5)
 
 
-ax1.set_ylim(3e-13, 1e-9)
+ax1.set_ylim(3e-13, 2e-10)
 ax1.set_xlim(7e-5, 1e-1)
 
 

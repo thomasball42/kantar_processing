@@ -1,13 +1,13 @@
 t3_category,display,location
 Butter and Margarine,True,False
-Fruit,True,True
-Vegetables,True,False
+Fruit,True,False
+Vegetables,True,True
 Ready Meals,True,True
 Yoghurts,True,False
 Bread & Rolls,True,True
-Poultry,True,False
+Poultry,True,True
 Cakes and Pastries,True,True
-Eggs,True,False
+Eggs,True,True
 Pork,True,True
 Fresh Salad & Dips,False,False
 Milk and Cream,True,False
@@ -41,7 +41,7 @@ Fizzy Drinks,True,False
 Stuffing,False,False
 Milkshakes and Yoghurt Drinks,False,False
 Peppers and Chillies,True,False
-Mushrooms,True,False
+Mushrooms,True,True
 Gourds,True,True
 Tomatoes,True,True
 Carrots and Other Root Vegetables,True,False
@@ -49,7 +49,7 @@ Mixed and Other Vegetables,True,False
 Alliaceous Vegetables,True,True
 Potatoes,True,False
 Lettuce and Artichokes,True,True
-Brassicas,True,False
+Brassicas,True,True
 Leguminous Vegetables,True,False
 Asparagus,True,False
 Maize,True,False

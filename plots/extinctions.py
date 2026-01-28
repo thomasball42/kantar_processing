@@ -38,6 +38,10 @@ def weight_calc(sizes, units, volumes, packs) -> list:
                 for size, unit, volume, pack in zip(sizes, units, volumes, packs) ]
     return weights
 df['item_weight_kg'] = weight_calc(df['pack_size'], df['pack_unit'], df['volume'], df['packs'])
+
+df.loc[df['mapped_tag']=='Eggs; hen; in shell', 'item_weight_kg'] *= (55/1000)  # average weight of one egg is 55g
+
+
 df['purchased_mass_kg'] = df['item_weight_kg'] * df['packs']
 
 plotting_categories = pd.read_csv("../data/mappings/plotting_categories.csv")
@@ -76,10 +80,12 @@ for cat in df[display_cat].unique():
     ax1.scatter(mean_daily_mass, per_kg_extinctions, color=c, s=10, zorder=1)
     display = display_opt[display_opt['t3_category'] == cat]['display'].iloc[0]
     location = display_opt[display_opt['t3_category'] == cat]['location'].iloc[0]
+    if cat == "Bread & Rolls":
+        print(sub_df.pack_unit.unique(), len(sub_df), purchased_mass, total_extinctions)
     
-    z=0.93
+    z=0.9
     if display:
-        z = 1.07 if location else 0.93
+        z = 1.09 if location else 0.9
         ax1.text(mean_daily_mass, per_kg_extinctions * z, cat, color=c, horizontalalignment='center', verticalalignment='center', zorder=2)
 
 
@@ -116,7 +122,7 @@ for j in range(-16, -9):
 
 
 
-ax1.set_ylim(3e-13, 1e-9)
+ax1.set_ylim(3e-13, 3e-9)
 ax1.set_xlim(1e-4, 2e0)
 ax1.set_xscale('log')
 ax1.set_yscale('log')
@@ -132,5 +138,5 @@ ax2.set_xlim(x1*y2, x2*y2)
 ax2.set_xlabel("Total Daily Extinctions", color=total_grid_color)
 ax2.tick_params(axis='x', colors=total_grid_color)
 
-plt.savefig("outputs/extinctions.png", dpi=300, bbox_inches='tight')
+plt.savefig("../outputs/extinctionsmapspam.png", dpi=300, bbox_inches='tight')
 # plt.show()

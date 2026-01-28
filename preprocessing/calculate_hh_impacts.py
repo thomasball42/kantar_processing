@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 hh_to_exclude = []
-with open("data/hh_to_exclude.txt", "r") as f:
+with open("../data/hh_to_exclude.txt", "r") as f:
     for line in f:
         hh_to_exclude.append(int(line.strip()))
 
-impact_df: DataFrame = pd.read_csv("data/item_impacts.csv", index_col=0)
+impact_df: DataFrame = pd.read_csv("../data/item_impacts.csv", index_col=0)
 
-dat_th: DataFrame = pd.read_csv("data/dat_th.csv")
+dat_th: DataFrame = pd.read_csv("../data/dat_th.csv")
 dat_th = dat_th[~dat_th['house'].isin(hh_to_exclude)]
 
 dat_th["co2"] = dat_th['product'].map(impact_df['kgCO2_per_item'])*dat_th['packs']
