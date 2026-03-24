@@ -153,7 +153,10 @@ def main():
     plt.grid()
     plt.xlabel("FAO-based biodiversity impact (daily extinctions per person)")
     plt.ylabel("WP2-based biodiversity impact (daily extinctions per person)")
-    plt.show()
+    fig = plt.gcf()
+    fig.set_size_inches(10, 10)
+    fig.tight_layout()
+    plt.savefig("outputs/mandala_comparison_extinctions.png", dpi=600)
     print(m, b)
     
     

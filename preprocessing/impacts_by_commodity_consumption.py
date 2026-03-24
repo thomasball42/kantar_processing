@@ -22,7 +22,7 @@ def crop_valid_houses(purchases: DataFrame):
     purchases = purchases.merge(d, on="house", how='left').dropna(subset=['days_active'])
     purchases.packs = purchases.packs / purchases.days_active  # daily packs per household
     pop = d[d.days_active>t]['size'].sum()
-    # print(pop)
+    print(pop, len(valid_houses))
     return purchases, pop
 
 
@@ -118,12 +118,16 @@ def main():
     mandala_impacts = mandala_impacts.merge(pd.DataFrame(color_dict.items(), columns=["group_name_v7", "color"]), on="group_name_v7", how="left")
     mandala_impacts['color'] = mandala_impacts['color'].fillna("#000000")  # grey for uncategorized
     import matplotlib.pyplot as plt
+    fig, ax = plt.subplots(figsize=(10, 10))
+
+    mandala_impacts = mandala_impacts[mandala_impacts["index"]!="Cheese"]
+    mandala_impacts = mandala_impacts[mandala_impacts["index"]!="Butter, Cream & Ghee"]
 
     mandala_impacts.loc[mandala_impacts["index"]=="Fish", "primary_tonnage"] = 0.03834
     print(mandala_impacts.loc[mandala_impacts["index"]=="Fish"])
-    plt.scatter(mandala_impacts["primary_tonnage"], mandala_impacts["kg"], c=mandala_impacts["color"])
+    ax.scatter(mandala_impacts["primary_tonnage"], mandala_impacts["kg"], c=mandala_impacts["color"])
     for commodity in mandala_impacts.index:
-        plt.annotate(mandala_impacts.loc[commodity, "index"], # pyright: ignore[reportArgumentType]
+        ax.annotate(mandala_impacts.loc[commodity, "index"], # pyright: ignore[reportArgumentType]
                     (mandala_impacts.loc[commodity, "primary_tonnage"], mandala_impacts.loc[commodity, "kg"]), # pyright: ignore[reportArgumentType]
                     textcoords="offset points",
                     xytext=(0,10),
@@ -133,9 +137,9 @@ def main():
 
     print(mandala_impacts["primary_tonnage"].sum())
 
-    plt.scatter([mandala_impacts["primary_tonnage"].sum()], [mandala_impacts["kg"].sum()], c="#000000",)
+    ax.scatter([mandala_impacts["primary_tonnage"].sum()], [mandala_impacts["kg"].sum()], c="#000000",)
 
-    plt.annotate("Total", # pyright: ignore[reportArgumentType]
+    ax.annotate("Total", # pyright: ignore[reportArgumentType]
                 (mandala_impacts["primary_tonnage"].sum(), mandala_impacts["kg"].sum()), # pyright: ignore[reportArgumentType]
                 textcoords="offset points",
                 xytext=(0,10),
@@ -143,26 +147,28 @@ def main():
                 color="#000000",
                 fontsize=8)
 
-
+    ax.plot([1e-5, 1], [1e-5, 1], color="grey", linestyle="--", label="1:1 line")
   
 
-    xlim = plt.xlim()
-    ylim = plt.ylim()
+    xlim = ax.get_xlim()
+    ylim = ax.get_ylim()
     # m, b = np.polyfit(mandala_impacts["primary_tonnage"], mandala_impacts["kg"], 1)
     # x = np.arange(0, xlim[1], xlim[1]/100)
     # plt.plot(x, m * x + b, color="black", linestyle="--", label=f"Line of best fit: y = {m:.4f} x + {b:.4f}")
     # print(m, b)
     for k, v in color_dict.items():
-        plt.scatter([], [], c=v, label=k)
-    plt.legend()
+        ax.scatter([], [], c=v, label=k)
+    ax.legend()
     # plt.xlim(0, xlim[1])
     # plt.ylim(0, ylim[1])
-    plt.xscale("log")
-    plt.yscale("log")
-    plt.grid()
-    plt.xlabel("FAO-based consumption (kg per capita per day)")
-    plt.ylabel("WP2-based consumption (kg per capita per day)")
-    plt.show()
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.grid()
+    
+    ax.set_xlabel("FAO-based consumption (kg per capita per day)")
+    ax.set_ylabel("WP2-based consumption (kg per capita per day)")
+    fig.tight_layout()
+    plt.savefig("outputs/mandala_comparison.png", dpi=600)
     
     
     

@@ -47,6 +47,7 @@ def main():
 
     dat_th = pd.read_csv("data/dat_th.csv")
     dat_th, population = crop_valid_houses(dat_th)
+    population = 67668790
     purchases = dat_th.groupby("product")['packs'].sum()
     purchase_index = np.asarray([purchases.loc[p] if p in purchases else 0 for p in matrix_indices])
 
@@ -106,12 +107,15 @@ def main():
     out_df = out_df.merge(pd.DataFrame.from_dict(color_dict, orient='index', columns=['color']), left_on='group_name_v7', right_index=True, how='left')
     out_df['color'] = out_df['color'].fillna("#808080")  # grey for uncategorized
     print(out_df)
-    
+    impacts = impacts.merge(crosswalk[["group_name_v7"]], left_index=True, right_index=True, how="left")
+    impacts = impacts.merge(pd.DataFrame.from_dict(color_dict, orient='index', columns=['color']), left_on='group_name_v7', right_index=True, how='left')
     fig, ax1 = plt.subplots(figsize=(12,12))
-    ax1.scatter(out_df["kg"], out_df["exp_extinctions_per_kg"], c=out_df["color"])
-    for commodity in out_df.index:
+    impacts["color"] = impacts["color"].fillna("#808080")  # grey for uncategorized
+    impacts = impacts[~impacts.index.isin(["Butter, Cream & Ghee", "Cheese"])]
+    ax1.scatter(impacts["primary_tonnage"]*(1000/(365*population)), impacts["exp_extinctions_per_kg"], c=impacts["color"])
+    for commodity in impacts.index:
         ax1.annotate(commodity,
-                     (out_df.loc[commodity, "kg"], out_df.loc[commodity, "exp_extinctions_per_kg"]), # pyright: ignore[reportArgumentType]
+                     (float(impacts.loc[commodity, "primary_tonnage"])*(1000/(365*population)), impacts.loc[commodity, "exp_extinctions_per_kg"]), # pyright: ignore[reportArgumentType]
                      textcoords="offset points",
                      xytext=(0,10),
                      ha='center',
@@ -119,8 +123,9 @@ def main():
                      fontsize=8)
     
 
-    total_kg = out_df["kg"].sum()
-    total_ext_per_kg = out_df["exp_extinctions"].sum() / total_kg
+    total_kg = impacts["primary_tonnage"].sum()*(1000/(365*population))
+    impacts["exp_extinctions"] = impacts["exp_extinctions_per_kg"] * impacts["primary_tonnage"] * 1000 
+    total_ext_per_kg = impacts["exp_extinctions"].sum() / total_kg
     ax1.scatter(total_kg, total_ext_per_kg, color="#000000", s=100, marker="x", label="Total")
     ax1.annotate("Total",
                  (total_kg, total_ext_per_kg), # pyright: ignore[reportArgumentType]
@@ -161,6 +166,7 @@ def main():
     ax1.set_yscale('log')
     ax1.set_xlabel(u"Mean Daily Purchased Mass (kg)")
     ax1.set_ylabel(u"Extinctions per kg (kg$^{-1}$)")
+
     ax1.grid(True, which="major", linewidth=0.5)
 
     ax2 = ax1.twiny()
