@@ -4,7 +4,6 @@ from pandas import DataFrame, Series
 
 # create the product matrix for all items in dat_th.csv
 
-
 # calculate weights
 def weight_calc(sizes:Series, units:Series, volumes:Series, packs:Series) -> list:
     weights:list = [size/1000 if unit in ['g', 'Drained weightg', 'ml'] # assume ml = g
@@ -43,11 +42,13 @@ def create_item_weights_matrix(unique_item_properties:DataFrame, comp_matrix:Dat
     return output_df
 
 
-def main():
-    df: DataFrame = pd.read_csv('data/attr_all_fixed_mapped.csv', encoding='cp1252', low_memory=False)
+def main(app_str="."):
+    df: DataFrame = pd.read_csv(f'data/{app_str}/attr_all_fixed_mapped.csv', encoding='cp1252', low_memory=False)
     df = df[['product', 'mapped_tag', 'long_desc']]
 
-    dat_df: DataFrame = pd.read_csv('data/dat_th.csv', encoding='cp1252', low_memory=False)
+    # dat_df: DataFrame = pd.read_csv('data/dat_th.csv', encoding='cp1252', low_memory=False)
+    dat_df: DataFrame = pd.read_csv(f'data/{app_str}/dat_th_{app_str}.csv', encoding='cp1252', low_memory=False)
+
     dat_df['mapped_tag'] = dat_df['product'].map(df.set_index('product')['mapped_tag'])
     dat_df = compute_unique_item_weights(dat_df)
 
@@ -55,9 +56,9 @@ def main():
     unique_item_properties = dat_df[['product', 'mapped_tag', 'item_weight_kg']]
     print(dat_df[dat_df['pack_unit'].isin(['Servings'])])
 
-    comp_matrix: DataFrame = pd.read_csv('data/composition_matrix.csv', encoding='cp1252', low_memory=False, index_col=0)
+    comp_matrix: DataFrame = pd.read_csv(f'data/{app_str}/composition_matrix.csv', encoding='cp1252', low_memory=False, index_col=0)
     out_df = create_item_weights_matrix(unique_item_properties, comp_matrix)
-    out_df.to_csv('data/product_breakdown_matrix.csv', encoding='cp1252')
+    out_df.to_csv(f'data/{app_str}/product_breakdown_matrix.csv', encoding='cp1252')
     
 if __name__ == "__main__":
     import os

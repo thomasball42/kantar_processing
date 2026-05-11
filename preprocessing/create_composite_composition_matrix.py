@@ -3,7 +3,7 @@ import numpy as np
 from numpy import ndarray
 from pandas import DataFrame, Series
 
-def main():
+def main(app_str="."):
     # use single item mapping to relate Tom and Mikes slightly different food categories to the same single item tag
     single_item_mapping: DataFrame = pd.read_csv('data/mappings/single_item_mapping_with_modifier_tag.csv')
     single_item_dict: dict = dict(zip(single_item_mapping['Food_Category_sub_sub'], single_item_mapping['Food Commodity']))
@@ -31,7 +31,7 @@ def main():
     # matrix setup
     unique_items: ndarray = food_composition_df["validation_field_title"].unique()
     single_item_array: DataFrame = pd.DataFrame(0, index=unique_items, columns=unique_single_tags)
-    single_item_matrix: ndarray = single_item_array.to_numpy(dtype=float)
+    single_item_matrix: ndarray = single_item_array.to_numpy(dtype=float).copy()
     index_map: dict = {item: idx for idx, item in enumerate(unique_items)}
     column_map: dict = {tag: idx for idx, tag in enumerate(unique_single_tags)}
 
@@ -65,7 +65,7 @@ def main():
     #             except KeyError:
     #                 single_item_array.loc[k, :] = single_item_array.loc[str(v).title(), :]
 
-    single_item_array.to_csv('data/composition_matrix.csv')
+    single_item_array.to_csv(f'data/{app_str}/composition_matrix.csv')
 
 if __name__ == "__main__":
     main()

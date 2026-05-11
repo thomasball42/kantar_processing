@@ -38,7 +38,7 @@ impacts = pd.DataFrame(data={
 })
 
 # import the hh data and remove duplicate households - then extract the hh sizes and divide the impacts by hh_size to get per capita impacts
-hh_data: DataFrame = pd.read_csv("data/pan_th_new.csv")
+hh_data: DataFrame = pd.read_csv("data/pan_th_ALL.csv")
 hh_data['terageed'] = hh_data['terageed'].apply(lambda x: 0 if x == 9 else x) # correct for a mistake in data
 
 hh_data['in_edu'] = hh_data['terageed'].apply(lambda x: True if x == 4 else False) # create a column for "in education"
