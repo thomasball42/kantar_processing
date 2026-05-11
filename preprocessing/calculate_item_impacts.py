@@ -2,16 +2,17 @@ import numpy as np
 import pandas as pd
 from pandas import DataFrame
 from numpy import ndarray
-def main():
+
+def main(app_str="."):
     # load the data from the product breakdown matrix as a matrix
-    matrix_df: DataFrame = pd.read_csv("data/product_breakdown_matrix.csv", index_col=0)
+    matrix_df: DataFrame = pd.read_csv(f"data/{app_str}/product_breakdown_matrix.csv", index_col=0)
     matrix_df.drop(columns=["nan"], inplace=True)
     matrix_indices: list = matrix_df.index.tolist() # PRODUCT CODES
     matrix_columns: list = matrix_df.columns.tolist()
     matrix: np.ndarray = matrix_df.to_numpy(dtype=float)
 
     # load the impact factors as vector
-    impacts: DataFrame = pd.read_csv("data/food_commodity_impacts_fixed.csv", index_col=0)
+    impacts: DataFrame = pd.read_csv("data/food_commodity_impacts_260409.csv", index_col=0)
     impacts = impacts[impacts.index.isin(matrix_columns)]
     impacts.sort_index(inplace=True)
 
@@ -45,10 +46,10 @@ def main():
 
     out_df:DataFrame = pd.DataFrame(vals, index=matrix_indices, columns=["kgCO2_per_item", "exp_extinctions_per_item", "scarcity_weighted_water_use_litres_per_item", "exp_extinctions_per_item_err"])
 
-    out_df.to_csv("data/item_impacts.csv")
+    out_df.to_csv(f"data/{app_str}/item_impacts.csv")
 
 
-    recreate_dat_th: DataFrame = pd.read_csv("data/dat_th.csv")
+    recreate_dat_th: DataFrame = pd.read_csv(f"data/{app_str}/dat_th_{app_str}.csv")
     recreate_dat_th['kgCO2_per_pack'] = recreate_dat_th['product'].map(out_df['kgCO2_per_item'])
     recreate_dat_th['exp_extinctions_per_pack'] = recreate_dat_th['product'].map(out_df['exp_extinctions_per_item'])
     recreate_dat_th['exp_extinctions_per_pack_err'] = recreate_dat_th['product'].map(out_df['exp_extinctions_per_item_err'])
@@ -58,12 +59,12 @@ def main():
     recreate_dat_th['exp_extinctions_err'] = recreate_dat_th['exp_extinctions_per_pack_err'] * recreate_dat_th['packs']
     recreate_dat_th['scarcity_weighted_water_use_litres'] = recreate_dat_th['scarcity_weighted_water_use_litres_per_pack'] * recreate_dat_th['packs']
 
-    category_df = pd.read_csv("data/attr_all_fixed_mapped.csv", usecols=['product', 'mapped_tag'])
+    category_df = pd.read_csv(f"data/{app_str}/attr_all_fixed_mapped.csv", usecols=['product', 'mapped_tag'])
     recreate_dat_th = recreate_dat_th.merge(category_df, on='product', how='left')
 
     recreate_dat_th = recreate_dat_th[~((recreate_dat_th['pack_unit']=='Servings')&(recreate_dat_th['mapped_tag']!='Eggs; hen; in shell'))]
 
-    recreate_dat_th.to_csv("data/dat_th_with_impacts.csv", index=False)
+    recreate_dat_th.to_csv(f"data/{app_str}/dat_th_{app_str}_with_impacts.csv", index=False)
 
 if __name__ == "__main__":
     import os

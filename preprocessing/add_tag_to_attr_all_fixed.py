@@ -4,10 +4,9 @@ import numpy as np
 
 # Some rst codes correspond to a single item, while some are composite items
 # load the mapping of RST tags
-def main():
+def main(app_str="."):
     rst_to_comp_or_single_mappings = pd.read_csv('data/mappings/tag_mapping.csv')
     rst_to_comp_or_single_mappings["mapped_tag"] = rst_to_comp_or_single_mappings["mapped_tag"].str.lstrip('*')
-
     # as some rst_4_extended are NaN, we need to create a new column rst_4_lowest
     # some rst_4_lowest are not unique so we create a "unique_category" column to map the tags
 
@@ -30,7 +29,7 @@ def main():
         rst_to_comp_or_single_mappings.set_index("unique_category")["mapped_tag"])
 
     correct_df = correct_df.drop(columns=["rst_4_lowest", "unique_category", "Impact_category"])
-    correct_df.to_csv('data/attr_all_fixed_mapped.csv', index=False, encoding='cp1252')
+    correct_df.to_csv(f'data/{app_str}/attr_all_fixed_mapped.csv', index=False, encoding='cp1252')
 
 if __name__ == "__main__":
     main()
