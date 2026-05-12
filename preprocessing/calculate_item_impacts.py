@@ -64,6 +64,13 @@ def main(app_str="."):
 
     recreate_dat_th = recreate_dat_th[~((recreate_dat_th['pack_unit']=='Servings')&(recreate_dat_th['mapped_tag']!='Eggs; hen; in shell'))]
 
+    cont_list = ["kcals", "Sugar", "Saturated_Fat", "Total_Fat", "Fibre", "Protein","Sodium", "Carbs"]
+    for cont in cont_list:
+        if app_str == "WAVE1":
+            cont = cont.lower()
+        recreate_dat_th[f"{cont}_per_purchase"] = recreate_dat_th[cont] * recreate_dat_th['packs'] * recreate_dat_th['volume'] / recreate_dat_th['nutritionvol']
+        recreate_dat_th.drop(columns=[cont], inplace=True)
+
     recreate_dat_th.to_csv(f"data/{app_str}/dat_th_{app_str}_with_impacts.csv", index=False)
 
 if __name__ == "__main__":

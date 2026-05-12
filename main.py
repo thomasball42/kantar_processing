@@ -6,17 +6,21 @@ from preprocessing.create_product_breakdown_matrix import main as main3
 from preprocessing.calculate_item_impacts import main as main4
 
 from preprocessing import concat_pan_th
-app_str = "WAVE1"
 
-os.makedirs(os.path.join("data", app_str), exist_ok=True)
+for app_str in [
+                "WAVE1", 
+                "WAVE2"
+                ]:
 
-concat_pan_th.main()
+    os.makedirs(os.path.join("data", app_str), exist_ok=True)
 
-main1(app_str=app_str)
-print(1)
-main2(app_str=app_str)
-print(2)
-main3(app_str=app_str)
-print(3)
-main4(app_str=app_str)
-print(4)
+    concat_pan_th.main()
+
+    main1(app_str=app_str)
+    print(1)
+    main2(app_str=app_str)
+    print(2)
+    main3(app_str=app_str)
+    print(3)
+    main4(app_str=app_str)
+    print(4)
